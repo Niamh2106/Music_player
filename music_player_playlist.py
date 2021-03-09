@@ -17,10 +17,10 @@ pygame.mixer.init()
 
 #function to add song from file explorer
 def add_song():
-    folder_selected = filedialog.askdirectory()
+    #folder_selected = filedialog.askdirectory()
     song = filedialog.askopenfilename(filetypes=(("mp3 Files", "*.mp3"), ))
     playlist_box.insert(END,song)
-    root.mainloop()
+    #root.mainloop()
     
 # #Playlist title name
 playlist_name = Label(root, text = "Playlist", bg="red",
