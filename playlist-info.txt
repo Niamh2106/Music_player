@@ -1,0 +1,3 @@
+import os ()
+
+the purpose of the root widget/variable is to essentially initialise the window.
