@@ -29,8 +29,8 @@ def pause():
         pygame.mixer.music.pause()
         paused = True
 
-# def play_next():
-#     pass
+def play_next():
+    pass
     
-# def play_prev():
-#     pass
+def play_prev():
+    pass
