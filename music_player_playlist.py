@@ -19,7 +19,9 @@ pygame.mixer.init()
 def add_song():
     #folder_selected = filedialog.askdirectory()
     song = filedialog.askopenfilename(filetypes=(("mp3 Files", "*.mp3"), ))
-    playlist_box.insert(END,song)
+    for songname in song:
+    	songname = song.split("/")
+    playlist_box.insert(END,songname[-1:])
     #root.mainloop()
     
 # #Playlist title name
