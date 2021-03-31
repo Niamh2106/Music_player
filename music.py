@@ -16,7 +16,7 @@ def play():
         pygame.mixer.music.unpause()
         paused = False
     else:
-        pygame.mixer.music.load("songs/Clean Bandit - Symphony (feat. Zara Larsson) [Official Video].mp3")
+        pygame.mixer.music.load(songname[-1])
         pygame.mixer.music.play(loops=0)
 
 def pause():
