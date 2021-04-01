@@ -1,9 +1,8 @@
 import pygame
-
+import main
 """
 This is a module which will define the algorithms that will be used for the different buttons.
 """
-
 #initialise mixer
 pygame.mixer.init()
 

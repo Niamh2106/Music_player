@@ -22,7 +22,7 @@ def add_song():
     for songname in song:
     	songname = song.split("/")
     playlist_box.insert(END,songname[-1:])
-    #root.mainloop()
+
     
 # #Playlist title name
 playlist_name = Label(root, text = "Playlist", bg="red",
@@ -35,8 +35,6 @@ playlist_box = Listbox(root,bg="red",fg="black",font=("calibri"),
 highlightcolor="darkred", height="20", width="20",)
 playlist_box.grid(row=1, column=0)
 
-#Create Space
-create_space1 = 1
 
 #Add Song Button
 add_songs = Button(root, text = "Add Songs", bg="red",fg="white",font=("calibri",14,
