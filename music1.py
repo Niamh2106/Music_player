@@ -12,12 +12,14 @@ This is a module which will define the algorithms that will be used for the diff
 pygame.mixer.init()
 global songname
 songname = ""
-song_count = -1
 global path 
 path = ""
 global paused
 paused = False
 global song_list
+
+global i
+i = 0
 song_list = []
 
 #function to add song from file explorer
@@ -29,7 +31,6 @@ def add_song(playlist_box):
     for songname in song:
         songname = song.split("/")
         path = "/".join(songname)
-        song_count += 1
     song_list.append(path)
     playlist_box.insert(END,songname[-1])
 
@@ -37,14 +38,10 @@ def add_song(playlist_box):
 
 
 def play():
-    i = 0
-    while i < len(song_list):
-        # if play_next():
-        pygame.mixer.music.load(song_list[i])
-        pygame.mixer.music.play(loops=0)
+    pygame.mixer.music.load(song_list[i])
+    pygame.mixer.music.play(loops=0)
         # pygame.mixer.music.load(song_list[i])
         # pygame.mixer.music.play(loops=0)
-        i += 1
 
     
 def pause():
@@ -58,12 +55,15 @@ def pause():
         paused = True
 
 def play_next():
-    pygame.mixer.music.load(song_list[len(song_list) - 1])
-    pygame.mixer.music.play(loops=0)
-    i = 0
-    while i < len(song_list):
-        print (i)
-        print (song_list[i])
+    global i
+    if i == len(song_list) - 1:
+        i = -1
+        pygame.mixer.music.load(song_list[i + 1])
+        pygame.mixer.music.play(loops=0)
+        i += 1
+    else:
+        pygame.mixer.music.load(song_list[i + 1])
+        pygame.mixer.music.play(loops=0)
         i += 1
 # If current song is at the end of the list go back to the first       
 
@@ -91,11 +91,15 @@ def play_next():
         # i += 1
 
 def play_prev():
-    for i in reversed(song_list):
-        print (i)
-        print  ("\n")
-        pygame.mixer.music.load(i)
+    global i
+    if i == 0:
+        i = len(song_list) - 1
+        pygame.mixer.music.load(song_list[i])
         pygame.mixer.music.play(loops=0)
+    else:
+        pygame.mixer.music.load(song_list[i - 1])
+        pygame.mixer.music.play(loops=0)
+        i -= 1
                 # if len(song_list) == 1:
             #     i = 0
             #     pygame.mixer.music.load(song_list[i])

@@ -8,6 +8,7 @@ root = tk.Tk()
 root.title('AIM Music Player')
 root.iconbitmap('aim-icon.bmp')
 root.geometry("380x500")
+root.resizable(0, 0)
 root.configure(background='black')
 
 #initialise python mixer/turn on mixer to enable sound
