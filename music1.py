@@ -4,6 +4,7 @@ import pickle #enable us to get all the metadata about a song
 from tkinter import * #for gui 
 from tkinter import filedialog
 from pygame.constants import BUTTON_RIGHT
+import random
 
 """
 This is a module which will define the algorithms that will be used for the different buttons.
@@ -40,8 +41,6 @@ def add_song(playlist_box):
 def play():
     pygame.mixer.music.load(song_list[i])
     pygame.mixer.music.play(loops=0)
-        # pygame.mixer.music.load(song_list[i])
-        # pygame.mixer.music.play(loops=0)
 
     
 def pause():
@@ -65,31 +64,6 @@ def play_next():
         pygame.mixer.music.load(song_list[i + 1])
         pygame.mixer.music.play(loops=0)
         i += 1
-# If current song is at the end of the list go back to the first       
-
-        # if song_list[i] == song_list[-1]:
-        #     pygame.mixer.music.load(song_list[0])
-        #     pygame.mixer.music.play(loops=0)
-        # else:
-        #     pygame.mixer.music.play(loops=0)
-        #     pygame.mixer.music.load(song_list[len(song_list) - 1])
-        # i += 1
-    # i = 0
-    # while i < len(song_list):
-        # if len(song_list) == 1:
-        #     i = 0
-        #     pygame.mixer.music.load(song_list[i])
-        #     pygame.mixer.music.play(loops=0)
-
-        # if i + i > len(song_list):
-        #     pygame.mixer.music.load(song_list[0])
-        #     pygame.mixer.music.play(loops=0)
-        
-        # else:
-        #     pygame.mixer.music.load(song_list[len(song_list) - 1])
-        #     pygame.mixer.music.play(loops=0)
-        # i += 1
-
 def play_prev():
     global i
     if i == 0:
@@ -100,10 +74,8 @@ def play_prev():
         pygame.mixer.music.load(song_list[i - 1])
         pygame.mixer.music.play(loops=0)
         i -= 1
-                # if len(song_list) == 1:
-            #     i = 0
-            #     pygame.mixer.music.load(song_list[i])
-            #     pygame.mixer.music.play(loops=0)
-            # else:
-            #     pygame.mixer.music.load(song_list[len(song_list) - 1 - i])
-            #     pygame.mixer.music.play(loops=0)
+
+def shuffle():
+    shuffle = random.choice(song_list)
+    pygame.mixer.music.load(shuffle)
+    pygame.mixer.music.play(loops=0)
