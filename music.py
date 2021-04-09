@@ -4,7 +4,6 @@ along with a class definition for songs.
 """
 import pygame
 from tkinter import filedialog, END, PhotoImage
-import random
 import os
 
 #song class
