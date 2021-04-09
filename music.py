@@ -89,7 +89,7 @@ def play(name, artist, image):
             #load and play song
             pygame.mixer.music.load(obj.path)
             pygame.mixer.music.play(loops=0)
-    except AttributeError: #handles error for if user presses play before a song has been added to the playlist
+    except IndexError: #handles error for if user presses play before a song has been added to the playlist
         pass
 
 
