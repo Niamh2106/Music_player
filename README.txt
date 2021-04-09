@@ -14,7 +14,7 @@ The music.py is a module we created for the various functions we have.
 
 Instructions
 1. Any song that you will play will need to have the following format: artist - songname eg. Coldplay - Paradise. Simply rename your song in that format.
-2. If you want a certain image to be displayed along with a song then rename the image to match the song name
+2. If you want a certain image to be displayed along with a song then rename the image to match the song name and put the image in the images folder
    i.e if the song is called Paradise then likewise the image should be called Paradise.
 3. You must make sure pygame is installed on your device, tkinter comes with Python so there is no need to install it.
 
