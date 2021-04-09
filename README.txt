@@ -34,3 +34,5 @@ Note:
     Only .png images can be used for the song image.
     
     Only .mp3 songs can be played.
+    
+    You cannot select a song by clicking it in the playlist, songs are played in the order they were added to the playlist.
