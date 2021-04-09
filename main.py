@@ -1,5 +1,4 @@
 from tkinter import * #for gui 
-import pygame
 import music
 
 root = Tk() #initialise windoe
